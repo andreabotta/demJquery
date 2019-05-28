@@ -13,8 +13,7 @@ $(document).ready(function(){
 
         $.each(response , function(i, obj){
             myitem+='<div class="card '+obj.id+'" id="' +obj.id+'">'; 
-            myitem+='<a href="#" class="linkcard">';  
-            myitem+='<img class="card-img-top" src="'+obj.img+'" alt="Card image cap">"';
+            myitem+='<img class="card-img-top" src="'+obj.img+'" alt="Card image cap" width="70px" height="500px">';
             myitem+='<div class="card-body">';
             myitem+='<h5 class="card-title"><h2>'+obj.title+'</h2</h5>'; 
             myitem+='<p class="card-text"><h3>'+obj.price+'</h3></p>';
@@ -22,7 +21,6 @@ $(document).ready(function(){
             myitem+='<div class="card-footer text-muted">';
             myitem+='<h4>'+obj.brand+'</h4>';
             myitem+='</div>';
-            myitem+='</a>';
             myitem+='</div>';
            
           console.log('valore',obj.id);
@@ -44,7 +42,8 @@ $(document).ready(function(){
  
     });
 
+     $(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
     
  });
- 
- 
