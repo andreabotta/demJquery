@@ -58,13 +58,19 @@
         }
 
         .nav-link {
-            transition: 0.4s;
+            text-decoration: none;
+            color: white;
+            background-color: #F54620;
+            transition: 0.2s;
+            border: 1px solid #F54620;
+            border-radius: 2px;
         }
 
         .nav-link:hover {
-            -webkit-transform: scale(1.3);
-            transform: scale(1.3);
-            transition: 0.4s;
+            text-decoration: none;
+            color: black;
+            border-bottom-color: white;
+
         }
 
         .card-footer {
@@ -79,13 +85,16 @@
             transition: 0.2s;
         }
 
+
         .list-group-item:hover {
-            background-color: lightblue;
+            background-color: #F54620;
             -webkit-transform: scale(0.9);
             transform: scale(0.9);
             transition: 0.2s;
             border: 1px solid black;
         }
+       
+    
 
         .sk-cube-grid {
             width: 200px;
@@ -192,11 +201,52 @@
             float: right;
         }
 
-        .navc{
-           background-color: #F54620;       
+        .navb {
+            background-color: #F54620;
+            transition: 0.5s;
         }
 
-        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+
+
+
+        label {
+            display: inline-block;
+            padding: 0.25em;
+        }
+
+        #cookieBar {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            padding: 2rem;
+            text-align: center;
+            background-color: #372C2C;
+            color: white;
+            opacity: 0.9;
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAAAGFBMVEX////Zgz7nkEK5czVFKhOLSytLKBdXLxpY0nziAAAAlUlEQVRYhe2VOQ6AMBADCef/f8y6sGRMEL2TaVjheIoVx7JMJh804yjOYgSBF1xEUgUM1w56H/NVpAn0AELOXCZnlT2WGSBAiKKGXBYFmicK/AHyhfmMPFXAKxenZT+TJtiKJvCAvkyALxoydJIEe0GJflB6sIxOkkAlvlDAHy3zVzlEQImKHObdcojARc5vMUgwGY4bDV8WsfRmLxIAAAAASUVORK5CYII=');
+            transition: 1s ease;
+            -webkit-transition: 1s ease;
+            -moz-transition: 1s ease;
+        }
+        #ck{
+            width: 100px;
+            height: 40px;
+            background-color: yellow;
+        }
+        #ck:hover{
+            cursor: pointer;
+        }
+
+    
     </style>
 </head>
 
@@ -219,51 +269,61 @@
 
     <div id="wrap">
 
-        <nav class="navbar navbar-expand-lg navbar-light navc">
-            <a class="navbar-brand" href="#">menu</a>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item ">
-                        <a class="nav-link active" href="index.html">Home <span class="sr-only"></span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="contact.html">Contact</a>
-                    </li>
-                       <li class="nav-item">
-                <div class="dropdown show">
-                    <a class="nav-link" href="#" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
-                       Log-in
+        <div class="pos-f-t navb">
+            <nav class="navbar navbar-dark">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+            </button>
+                <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" id="search" type="search" placeholder="Search" data-placement="left" data-toggle="tooltip" title="digita per cercare">
+                </form>
+
+            </nav>
+            <div class="collapse" id="navbarToggleExternalContent">
+                <div class=" p-4">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item ">
+                            <a class="nav-link active" href="index.html">Home <span class="sr-only"></span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="contact.html">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                    <div class="dropdown show">
+                        <a class="nav-link" href="#" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                       <h6>Log-in</h6>
                     </a>
-                    <div class="dropdown-menu" >
-                        <form class="px-4 py-3">
-                            <div class="form-group">
-                                <label for="exampleDropdownFormEmail1">Email address</label>
-                                <input type="email" class="form-control" id="exampleDropdownFormEmail1" placeholder="email@example.com">
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleDropdownFormPassword1">Password</label>
-                                <input type="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="Password">
-                            </div>
-                            <div class="form-check">
-                                <input type="checkbox" class="form-check-input" id="dropdownCheck">
-                                <label class="form-check-label" for="dropdownCheck">
+                        <div class="dropdown-menu">
+                            <form class="px-4 py-3">
+                                <div class="form-group">
+                                    <label for="exampleDropdownFormEmail1">Email address</label>
+                                    <input type="email" class="form-control" id="exampleDropdownFormEmail1" placeholder="email@example.com">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleDropdownFormPassword1">Password</label>
+                                    <input type="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="Password">
+                                </div>
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" id="dropdownCheck">
+                                    <label class="form-check-label" for="dropdownCheck">
                                     Remember me
                                 </label>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Sign in</button>
-                        </form>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">New around here? Sign up</a>
-                        <a class="dropdown-item" href="#">Forgot password?</a>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Sign in</button>
+                            </form>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">New around here? Sign up</a>
+                            <a class="dropdown-item" href="#">Forgot password?</a>
+                        </div>
                     </div>
+                </li>
+                    </ul>
+
                 </div>
-            </li>
-                </ul>
-                <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search"  data-placement="left" placeholder="Search" data-toggle="tooltip" title="premi invio per cercare">
-                </form>
             </div>
-        </nav>
+        </div>
+
 
         <div class="container">
 
@@ -418,6 +478,13 @@
             <i id="co"> © copyright, all rights reserved</i>
         </div>
 
+        <div id="coo">
+            <input id="cookieButton" name="cookieButton" type="checkbox" />
+            <div id="cookieBar">
+                <p>cookies aren't bad, okay?This website uses cookies to give you an incredible experience <button id="ck" onclick="nascosto()">OK</button></p>
+            </div>
+        </div>
+
 
     </div>
     <script>
@@ -433,7 +500,9 @@
             document.getElementById("loader").style.display = "none";
             document.getElementById("wrap").style.opacity = "1";
 
-
+        }
+        function nascosto(){
+            document.getElementById("coo").style.display="none";
         }
     </script>
 
