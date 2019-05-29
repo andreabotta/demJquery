@@ -60,4 +60,5 @@ $.ajax(itemSettings).done(function(response){
  $(function () {
   $('[data-toggle="tooltip"]').tooltip()
 })
+    //
 });
