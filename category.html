@@ -21,15 +21,12 @@
 
 
     <style>
-
         .card {
             margin-top: 15px;
         }
-
         .container {
             margin-top: 10px;
         }
-
         .footer {
             width: 100%;
             text-align: center;
@@ -39,48 +36,64 @@
             height: 60px;
             align-content: center;
         }
-
         .linkcard:hover {
             text-decoration: none;
             color: black;
         }
-
         .linkcard {
             color: black;
         }
-
-        .nav-link {
+       .nav-link {
+            text-decoration: none;
             color: white;
-            transition: 0.4s;
+            background-color: #F54620;
+            transition: 0.2s;
+            border: 1px solid #F54620;
+            border-radius: 2px;
         }
-
         .nav-link:hover {
-            -webkit-transform: scale(1.3);
-            transform: scale(1.3);
-            transition: 0.5s;
+            text-decoration: none;
+            color: black;
+            border-bottom-color: white;
         }
-
         .card-footer {
             background-color: lightgray;
         }
-
         #brandlist {
             background-color: white;
         }
-
-        .list-group-item {
+         .list-group-item {
             transition: 0.2s;
         }
-
         .list-group-item:hover {
-            background-color: lightgrey;
+            background-color: #F54620;
             -webkit-transform: scale(0.9);
             transform: scale(0.9);
             transition: 0.2s;
             border: 1px solid black;
         }
-
-
+        
+         .list-group-item:active{
+            background-color: #2880FF;
+            border:1px solid #2880FF;
+            transition: 0;
+            color: white;
+         }
+          .list-group-item:focus{
+            background-color: #2880FF;
+            border:1px solid #2880FF;
+            transition: 0;
+            color: white;
+         }
+       .active{
+           background-color: #2880FF;
+       }
+       .active:hover{
+            transform: scale(1);
+            background-color: #2880FF;
+            border:1px solid #2880FF;
+            
+       }
         #loader {
             width: 100%;
             height: 100vh;
@@ -89,13 +102,11 @@
             position: fixed;
             opacity: 1;
         }
-
         .sk-cube-grid {
             width: 200px;
             height: 200px;
             margin: 100px auto;
         }
-
         .sk-cube-grid .sk-cube {
             width: 33%;
             height: 33%;
@@ -104,52 +115,42 @@
             -webkit-animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
             animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
         }
-
         .sk-cube-grid .sk-cube1 {
             -webkit-animation-delay: 0.2s;
             animation-delay: 0.2s;
         }
-
         .sk-cube-grid .sk-cube2 {
             -webkit-animation-delay: 0.3s;
             animation-delay: 0.3s;
         }
-
         .sk-cube-grid .sk-cube3 {
             -webkit-animation-delay: 0.4s;
             animation-delay: 0.4s;
         }
-
         .sk-cube-grid .sk-cube4 {
             -webkit-animation-delay: 0.1s;
             animation-delay: 0.1s;
         }
-
         .sk-cube-grid .sk-cube5 {
             -webkit-animation-delay: 0.2s;
             animation-delay: 0.2s;
         }
-
         .sk-cube-grid .sk-cube6 {
             -webkit-animation-delay: 0.3s;
             animation-delay: 0.3s;
         }
-
         .sk-cube-grid .sk-cube7 {
             -webkit-animation-delay: 0s;
             animation-delay: 0s;
         }
-
         .sk-cube-grid .sk-cube8 {
             -webkit-animation-delay: 0.1s;
             animation-delay: 0.1s;
         }
-
         .sk-cube-grid .sk-cube9 {
             -webkit-animation-delay: 0.2s;
             animation-delay: 0.2s;
         }
-
         @-webkit-keyframes sk-cubeGridScaleDelay {
             0%,
             70%,
@@ -162,7 +163,6 @@
                 transform: scale3D(0, 0, 1);
             }
         }
-
         @keyframes sk-cubeGridScaleDelay {
             0%,
             70%,
@@ -175,8 +175,9 @@
                 transform: scale3D(0, 0, 1);
             }
         }
-         .navc{
-           background-color: #F54620;
+        .navb {
+            background-color: #F54620;
+            transition: 0.5s;
         }
     </style>
 </head>
@@ -200,51 +201,58 @@
 
     <div id="wrap">
 
-<nav class="navbar navbar-expand-lg navbar-light navc">
-            <a class="navbar-brand" href="#">menu</a>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item ">
-                        <a class="nav-link active" href="index.html">Home <span class="sr-only"></span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="contact.html">Contact</a>
-                    </li>
-                       <li class="nav-item">
-                <div class="dropdown show">
-                    <a class="nav-link" href="#" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                       Log-in
+<div class="pos-f-t navb">
+            <nav class="navbar navbar-dark">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+            </button>
+               
+            </nav>
+            <div class="collapse" id="navbarToggleExternalContent">
+                <div class=" p-4">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item ">
+                            <a class="nav-link " href="index.html">Home <span class="sr-only"></span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="contact.html">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                    <div class="dropdown show">
+                        <a class="nav-link" href="#" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                       <h6>Log-in</h6>
                     </a>
-                    <div class="dropdown-menu">
-                        <form class="px-4 py-3">
-                            <div class="form-group">
-                                <label for="exampleDropdownFormEmail1">Email address</label>
-                                <input type="email" class="form-control" id="exampleDropdownFormEmail1" placeholder="email@example.com">
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleDropdownFormPassword1">Password</label>
-                                <input type="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="Password">
-                            </div>
-                            <div class="form-check">
-                                <input type="checkbox" class="form-check-input" id="dropdownCheck">
-                                <label class="form-check-label" for="dropdownCheck">
+                        <div class="dropdown-menu">
+                            <form class="px-4 py-3">
+                                <div class="form-group">
+                                    <label for="exampleDropdownFormEmail1">Email address</label>
+                                    <input type="email" class="form-control" id="exampleDropdownFormEmail1" placeholder="email@example.com">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleDropdownFormPassword1">Password</label>
+                                    <input type="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="Password">
+                                </div>
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" id="dropdownCheck">
+                                    <label class="form-check-label" for="dropdownCheck">
                                     Remember me
                                 </label>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Sign in</button>
-                        </form>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">New around here? Sign up</a>
-                        <a class="dropdown-item" href="#">Forgot password?</a>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Sign in</button>
+                            </form>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">New around here? Sign up</a>
+                            <a class="dropdown-item" href="#">Forgot password?</a>
+                        </div>
                     </div>
+                </li>
+                    </ul>
+
                 </div>
-            </li>
-                </ul>
-                <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search"  data-placement="left" placeholder="Search" data-toggle="tooltip" title="premi invio per cercare">
-                </form>
             </div>
-        </nav>
+        </div>
+
 
         <div class="container">
             <div class="row">
@@ -401,19 +409,13 @@
 
         <script>
             var myVar;
-
             function myFunction() {
                 document.getElementById("wrap").style.opacity = "0.3";
                 myVar = setTimeout(showPage, 1300);
-
-
             }
-
             function showPage() {
                 document.getElementById("loader").style.display = "none";
                 document.getElementById("wrap").style.opacity = "1";
-
-
             }
         </script>
 
