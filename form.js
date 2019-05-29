@@ -7,6 +7,7 @@ $(document).ready(function(){
         mail=$("#mail").val();
         text=encodeURIComponent($("#mex").val());
 
+        window.location.href="mailto:andrea.botta2001@gmail.com?subject="+mail+"&body="+text;
 
     });
      $(function () {
